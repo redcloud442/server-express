@@ -1,0 +1,47 @@
+{
+  "name": "node-express-backend-template",
+  "version": "1.0.0",
+  "description": "Express backend template",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon --exec node --loader ts-node/esm index.ts",
+    "staging": "cross-env NODE_ENV=staging node index.js",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "db-pull": "dotenv -e .env.development -- npx prisma db pull ",
+    "db-push": "dotenv -e .env.development -- npx prisma db push ",
+    "db-pull:staging": "dotenv -e .env.staging -- npx prisma db pull ",
+    "db-push:staging": "dotenv -e .env.staging -- npx prisma db push ",
+    "db-studio": "dotenv -e .env.development -- npx prisma studio",
+    "db-studio:staging": "dotenv -e .env.staging -- npx prisma studio"
+  },
+  "author": "redCloud",
+  "dependencies": {
+    "@prisma/client": "^4.14.1",
+    "@supabase/ssr": "^0.5.2",
+    "@supabase/supabase-js": "^2.47.10",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "dotenv-flow": "^3.3.0",
+    "express": "^4.21.2",
+    "joi": "^17.9.2",
+    "jsonwebtoken": "^9.0.0",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.7.0",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.10.5",
+    "cross-env": "^7.0.3",
+    "dotenv-cli": "^7.2.1",
+    "nodemon": "^2.0.22",
+    "typescript": "^5.7.2"
+  }
+}
